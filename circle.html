@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>circle</title>
+</head>
+<body onload="draw()">
+
+    <canvas id="sketch" width="600" height="600"></canvas>
+
+    <script>
+
+        //source:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+        function getRandomInt(max){
+            return Math.floor(Math.random() * max);
+        }
+
+        function draw(){
+            var sketch = document.getElementById('sketch');
+            var context = sketch.getContext("2d");
+
+            context.fillStyle = "#000000";
+
+            for (var i = 1; i <= 9; i++){
+                context.beginPath();
+			    context.arc(getRandomInt(600),getRandomInt(600),getRandomInt(20), 40, 0, 2 * Math.PI, true);
+
+			    context.closePath();
+			    context.fill();
+            }
+        }
+
+    </script>
+</body>
+</html>

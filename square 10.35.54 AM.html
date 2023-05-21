@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=scr, initial-scale=1.0">
+    <title>square</title>
+</head>
+<body onload="draw()">
+    <canvas id="sketch" width="300" height="300"></canvas>
+
+    <script>
+        /*
+        function draw(){
+            //something about the canvas
+            var sketch = document.getElementById("sketch");
+            var context = sketch.getContext("2d");
+    
+            //add color
+            context.fillStyle = "#00ff00"; //code for green
+
+            for (var i = 0; i <= 4; i++){
+                //fillRect() take 4 arguments(x,y,width,height)
+                context.fillRect((i*25),70,20,20,20);
+            }
+            */
+
+
+             //source:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+             function getRandomInt(max){
+                return Math.floor(Math.random() * max);
+            }
+
+            const colors = ['pink','yellow','blue','purple','green','Teal'];
+
+            //source: https://www.slingacademy.com/article/how-to-generate-random-color-in-javascript/#google_vignette
+            const randomColors = (colorArray) => {
+                const randomIndex = Math.floor(Math.random() * colorArray.length);
+                return colorArray[randomIndex];
+            }
+
+            function draw(){
+            //something about the canvas
+            var sketch = document.getElementById('sketch');
+            var context = sketch.getContext("2d");
+
+            for (var i = 0; i <= 20; i++){
+                //fillRect() take 4 arguments(x,y,width,height)
+                var side = getRandomInt(100);
+                context.fillStyle = randomColors(colors);
+                context.fillRect(getRandomInt(300),getRandomInt(300),(side/4),(side/2));
+            }
+        }
+            
+
+    </script>
+</body>
+</html>

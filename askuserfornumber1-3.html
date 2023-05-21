@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+         //In-class Activity
+
+        var userInput = prompt("Please, Enter 1, 2, or 3?");
+        var usernum = parseInt(userInput);
+
+        if(usernum == 1){
+            console.log("You will fail your finals! HAHAHA!");
+        }else if(usernum == 2){
+            console.log("You might get rich, Try working hard and see!");
+        }else if(usernum == 3){
+            console.log("You're fine! You don't need a fortune!")
+        }else{
+            //doesn't work as intended
+            while(usernum > 3){
+                var userInput = prompt("I asked for number 1, 2 or 3. Try again!");
+                var usernum = parseInt(userInput);
+            }
+        }
+
+        
+
+    </script>
+</body>
+</html>
